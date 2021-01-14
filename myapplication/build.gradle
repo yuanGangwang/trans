@@ -1,0 +1,66 @@
+import groovy.xml.MarkupBuilder
+
+import java.nio.charset.Charset
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.g.g"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+}
+
+class MyTask extends DefaultTask {
+
+
+
+    @TaskAction
+     void action(){
+
+    }
+
+
+}
+
+//创建 hello3 task
+task hello3 (type: MyTask){
+    doLast{
+        println "action2+++++"
+    }
+}
+
+task t1 {
+//    def props = new Properties();
+//    props.load(new FileInputStream(path))
+//    println(props.getProperty("sdk.dir"))
+//
+
+//    def oriPath = System.getProperty("user.dir") + "\\src\\main\\res\\values\\strings.xml";
+//
+//    def oriPath2 = System.getProperty("user.dir") + "\\" + project.path.replace(":", "") + "\\src\\main\\res\\values\\strings.xml"
+//    println(project.path+ "\\" + project.path.replace(":", "") + "\\src\\main\\res\\values\\strings.xml")
+//    println(project.getParent().rootDir)
+//    println(oriPath)
+//    println(oriPath2)
+//    def xmlSlurper = new XmlSlurper()
+//    def response = xmlSlurper.parse(new File(oriPath))
+//    def data = [:]
+////
+//    //获取keys,values
+//    response.children().each {
+//        data.put(it.@name, it)
+//    }
+
+}
